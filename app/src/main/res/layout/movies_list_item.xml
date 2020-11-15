@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/movie_list_item_background"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="120dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_movie_photo"
+        android:layout_width="280dp"
+        android:layout_height="320dp"
+        app:cardCornerRadius="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/joker_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Joker"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/cv_movie_photo"
+        app:layout_constraintStart_toStartOf="@id/cv_movie_photo"
+        app:layout_constraintTop_toBottomOf="@id/cv_movie_photo" />
+
+    <TextView
+        android:id="@+id/tv_genre_action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/genre_background"
+        android:padding="6dp"
+        android:text="action"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/tv_genre_drama"
+        app:layout_constraintStart_toStartOf="@id/cv_movie_photo"
+        app:layout_constraintTop_toBottomOf="@id/tv_movie_title" />
+
+    <TextView
+        android:id="@+id/tv_genre_drama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/genre_background"
+        android:padding="6dp"
+        android:text="Drama"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/tv_genre_mystery"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/tv_genre_action"
+        app:layout_constraintTop_toTopOf="@id/tv_genre_action" />
+
+    <TextView
+        android:id="@+id/tv_genre_mystery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/genre_background"
+        android:padding="6dp"
+        android:text="Mystrey"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/cv_movie_photo"
+        app:layout_constraintStart_toEndOf="@id/tv_genre_drama"
+        app:layout_constraintTop_toTopOf="@id/tv_genre_action" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="9.0"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/rb_rating"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/cv_movie_photo"
+        app:layout_constraintTop_toBottomOf="@id/tv_genre_action" />
+
+    <RatingBar
+        android:id="@+id/rb_rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_rating"
+        app:layout_constraintEnd_toEndOf="@id/cv_movie_photo"
+        app:layout_constraintStart_toEndOf="@id/tv_rating"
+        app:layout_constraintTop_toTopOf="@id/tv_rating"
+        android:isIndicator="true"
+        android:rating="4"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
